@@ -1,0 +1,2 @@
+# EduKI
+KI im Unterricht
