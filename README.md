@@ -100,7 +100,7 @@ Ihr erlebt am eigenen Projekt, wie KI Sprache versteht, clever übersetzt und Pr
 
 Alle theoretischen Grundlagen, detaillierte Erklärungen zum Code und die Hintergründe zu den verwendeten KI-Konzepten findest du im ausführlichen Unterrichtsskript. Es ist die perfekte Ergänzung zu den praktischen Übungen in diesem Repository.
 
-➡️ **[Hier geht's zum vollständigen Unterrichtsskript (PDF)](./docs/af_dbagent.pdf)**
+➡️ **[Hier geht's zum vollständigen Unterrichtsskript (PDF)](https://michael2024abc.github.io/EduKI/af_dbagent.pdf)**
 
 ---
 
