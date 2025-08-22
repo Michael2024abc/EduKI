@@ -93,10 +93,16 @@ Mit **DB-Genius** baut Ihr Schritt für Schritt einen Java-Agenten, der zwischen
 
 Ihr erlebt am eigenen Projekt, wie KI Sprache versteht, clever übersetzt und Probleme löst, wie sie im (Schul-)Alltag wirklich vorkommen. Nebenbei werdet Ihr einfach besser in Java, SQL und modernen Schnittstellen.
 
-[Hier geht's zum Quellcode](./einheiten/ki_agent_einfach/)
+➡️ [Hier geht's zum Quellcode](./einheiten/ki_agent_einfach/)
 
 
-***
+**📖 Dokumentation & Theorie**
+
+Alle theoretischen Grundlagen, detaillierte Erklärungen zum Code und die Hintergründe zu den verwendeten KI-Konzepten findest du im ausführlichen Unterrichtsskript. Es ist die perfekte Ergänzung zu den praktischen Übungen in diesem Repository.
+
+➡️ **[Hier geht's zum vollständigen Unterrichtsskript (PDF)](./docs/af_dbagent.pdf)**
+
+---
 
 #### **Weitere Projekte & Aufgaben**
 
