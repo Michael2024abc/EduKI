@@ -47,7 +47,6 @@ Um die Projekte lokal auszuführen und damit zu experimentieren, benötigst du d
     ```bash
     git clone https://github.com/Michael2024abc/EduKI.git
     ```
-    *(Ersetze `DEIN_USERNAME` durch deinen GitHub-Benutzernamen)*
 
 2.  Navigiere in das heruntergeladene Projektverzeichnis:
     ```bash
