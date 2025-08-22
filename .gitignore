@@ -1,0 +1,53 @@
+# =========================================
+# Gradle + Eclipse
+# =========================================
+.gradle
+build
+target
+bin
+catfiles*
+
+# Ignoriere Gradle-spezifische Cache- und Logdateien
+# die außerhalb von .gradle oder build/ erzeugt werden könnten
+!gradle/wrapper/gradle-wrapper.jar
+!gradlew
+!gradlew.bat
+gradle-daemon.out.log
+*.jar
+*.war
+*.ear
+
+# =========================================
+# IDE-spezifische Dateien
+# =========================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+.nb-gradle/
+
+# =========================================
+# Betriebssystem-spezifische Dateien
+# =========================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+
