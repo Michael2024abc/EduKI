@@ -101,6 +101,9 @@ Alle theoretischen Grundlagen, detaillierte Erklärungen zum Code und die Hinter
 
 ➡️ **[Hier geht's zum vollständigen Unterrichtsskript (PDF)](https://michael2024abc.github.io/EduKI/af_dbagent.pdf)**
 
+➡️ **[Ergänzung: KI, Docker und MariaDB (PDF)](https://michael2024abc.github.io/EduKI/af_docker_db.pdf)**
+
+
 ---
 
 #### **Weitere Projekte & Aufgaben**
