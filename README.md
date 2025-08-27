@@ -127,6 +127,7 @@ Er generiert den passenden SQL-Befehl und zeigt ihn euch an. Damit habt ihr die 
 ➡️ **[Skript öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_agent_gm.pdf)**
 
 ➡️ **[Tabellenmodell öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_tabellenmodell_gm.pdf)**
+=======
 
 ---
 
