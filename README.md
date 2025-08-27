@@ -93,7 +93,7 @@ Mit **DB-Genius** baut Ihr Schritt für Schritt einen Java-Agenten, der zwischen
 
 Ihr erlebt am eigenen Projekt, wie KI Sprache versteht, clever übersetzt und Probleme löst, wie sie im (Schul-)Alltag wirklich vorkommen. Nebenbei werdet Ihr einfach besser in Java, SQL und modernen Schnittstellen.
 
-➡️ [Hier geht's zum Quellcode](./einheiten/ki_agent_einfach/)
+➡️ [Hier geht's zum Quellcode](https://github.com/Michael2024abc/EduKI/tree/main/einheiten/ki_agent_einfach)
 
 
 **📖 Dokumentation & Theorie**
@@ -122,12 +122,11 @@ Er generiert den passenden SQL-Befehl und zeigt ihn euch an. Damit habt ihr die 
 *   **Als CSV exportieren:**<br>
     Für den späteren Gebrauch in anderen Programmen wie Excel könnt ihr die Ergebnisse mit einem Klick als CSV-Datei speichern.
 
-➡️ [Hier geht's zum Quellcode](https://michael2024abc.github.io/EduKI/einheiten/ki_agent_gm)
+➡️ [Hier geht's zum Quellcode](https://github.com/Michael2024abc/EduKI/tree/main/einheiten/ki_agent_gm)
 
 ➡️ **[Skript öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_agent_gm.pdf)**
 
-➡️ **[Tabellenmodell öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_tabellenmodell_gm.pdf)**
-=======
+➡️ **[Tabellenmodell öffnen (PDF)](https://michael2024abc.github.io/EduKI/tables_gm.pdf)**
 
 ---
 
