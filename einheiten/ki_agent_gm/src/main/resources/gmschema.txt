@@ -1,0 +1,71 @@
+-- Tabelle: abteilung
+-- Spalten: id (INT), name (VARCHAR), lid (INT)
+
+-- Tabelle: bestellung
+-- Spalten: id (INT), kid (INT), mid (INT), bestdatum (DATE), liefdatum (DATE), bezahlt (BOOLEAN)
+
+-- Tabelle: bestpos
+-- Spalten: bid (INT), pid (INT), vpreis (DECIMAL), mwst (DECIMAL), menge (INT)
+
+-- Tabelle: bundesland
+-- Spalten: id (INT), name (VARCHAR)
+
+-- Tabelle: einheit
+-- Spalten: id (INT), bez (VARCHAR), anzahl (INT), volumen (DECIMAL)
+
+-- Tabelle: funktion
+-- Spalten: id (INT), taetigkeit (VARCHAR)
+
+-- Tabelle: gehalt
+-- Spalten: id (INT), gehalt (DECIMAL), iban (VARCHAR)
+
+-- Tabelle: kunde
+-- Spalten: id (INT), name (VARCHAR), strasse (VARCHAR), telefon (VARCHAR), email (VARCHAR), oid (INT)
+
+-- Tabelle: landkreis
+-- Spalten: id (INT), name (VARCHAR), bid (INT)
+
+-- Tabelle: lieferant
+-- Spalten: id (INT), name (VARCHAR), strasse (VARCHAR), telefon (VARCHAR), email (VARCHAR), oid (INT)
+
+-- Tabelle: lieferpos
+-- Spalten: lid (INT), pid (INT), vpreis (DECIMAL), mwst (DECIMAL), menge (INT)
+
+-- Tabelle: lieferung
+-- Spalten: id (INT), lid (INT), mid (INT), bestdatum (DATE), liefdatum (DATE)
+
+-- Tabelle: mitarbeiter
+-- Spalten: id (INT), name (VARCHAR), vorname (VARCHAR), gebdat (DATE), strasse (VARCHAR), oid (INT), aid (INT), fid (INT), eingestellt (DATE)
+
+-- Tabelle: ort
+-- Spalten: id (INT), plz (VARCHAR), name (VARCHAR), lid (INT)
+
+-- Tabelle: produkt
+-- Spalten: id (INT), bez (VARCHAR), vpreis (DECIMAL), mwst (DECIMAL), lagerbestand (INT), eid (INT), tid (INT)
+
+-- Tabelle: typ
+-- Spalten: id (INT), bez (VARCHAR)
+
+-- Tabelle: version
+-- Spalten: stand (DATE)
+
+-- Beziehungen (Fremdschlüssel):
+-- abteilung.lid -> mitarbeiter.id
+-- bestellung.kid -> kunde.id
+-- bestellung.mid -> mitarbeiter.id
+-- bestpos.bid -> bestellung.id
+-- bestpos.pid -> produkt.id
+-- gehalt.id -> mitarbeiter.id
+-- kunde.oid -> ort.id
+-- landkreis.bid -> bundesland.id
+-- lieferant.oid -> ort.id
+-- lieferpos.lid -> lieferung.id
+-- lieferpos.pid -> produkt.id
+-- lieferung.lid -> lieferant.id
+-- lieferung.mid -> mitarbeiter.id
+-- mitarbeiter.aid -> abteilung.id
+-- mitarbeiter.fid -> funktion.id
+-- mitarbeiter.oid -> ort.id
+-- ort.lid -> landkreis.id
+-- produkt.eid -> einheit.id
+-- produkt.tid -> typ.id

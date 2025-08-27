@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+   xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>de.gc</groupId>
+   <artifactId>gm_agent</artifactId>
+   <version>0.1.1</version>
+
+   <properties>
+
+      <!-- Wir legen hier zentrale Versionen fest, um sie leicht zu aktualisieren. -->
+      <maven.compiler.source>21</maven.compiler.source>
+      <maven.compiler.target>21</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+      <langchain4j.version>1.2.0</langchain4j.version>
+      <langchain4j-google-ai-gemini.version>1.2.0</langchain4j-google-ai-gemini.version>
+      <langchain4j-github-models.version>1.2.0-beta8</langchain4j-github-models.version>
+      <langchain4j-ollama.version>1.2.0</langchain4j-ollama.version>
+
+      <mariadb-java-client.version>3.5.4</mariadb-java-client.version>
+      <slf4j-simple.version>2.0.17</slf4j-simple.version>
+      <text-table-formatter.version>1.2.4</text-table-formatter.version>
+      <apache.commons.csv.version>1.11.0</apache.commons.csv.version>
+
+   </properties>
+
+   <dependencies>
+
+      <!-- =================================================================== -->
+      <!-- ABHÄNGIGKEITEN FÜR LANGCHAIN4J & GOOGLE GEMINI -->
+      <!-- =================================================================== -->
+
+      <!-- Das Herzstück von LangChain4j. Bietet die Kern-APIs. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j</artifactId>
+         <version>${langchain4j.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für Google Gemini AI). -->
+      <!-- Damit kann unsere Java-Anwendung mit der Gemini-API sprechen. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-google-ai-gemini</artifactId>
+         <version>${langchain4j-google-ai-gemini.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für GitHub Copilot. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-github-models</artifactId>
+         <version>${langchain4j-github-models.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für Ollama. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-ollama</artifactId>
+         <version>${langchain4j-ollama.version}</version>
+      </dependency>
+
+      <!-- =================================================================== -->
+      <!-- ABHÄNGIGKEITEN FÜR DIE DATENBANK & LOGGING, ... -->
+      <!-- =================================================================== -->
+
+      <!-- Der offizielle JDBC-Treiber für MariaDB. -->
+      <dependency>
+         <groupId>org.mariadb.jdbc</groupId>
+         <artifactId>mariadb-java-client</artifactId>
+         <version>${mariadb-java-client.version}</version>
+      </dependency>
+
+      <!-- Erzeugt schöne Text-Tabellen -->
+      <dependency>
+         <groupId>org.nocrala.tools.texttablefmt</groupId>
+         <artifactId>text-table-formatter</artifactId>
+         <version>${text-table-formatter.version}</version>
+      </dependency>
+
+
+      <!-- Für CSV Dateien -->
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-csv</artifactId>
+         <version>${apache.commons.csv.version}</version>
+      </dependency>
+
+      <!-- Eine einfache Logging-Implementierung. Sehr nützlich, um zu sehen, -->
+      <!-- was LangChain4j im Hintergrund macht (z.B. welche Prompts es sendet). -->
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-simple</artifactId>
+         <version>${slf4j-simple.version}</version>
+      </dependency>
+   </dependencies>
+
+</project>

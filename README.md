@@ -21,6 +21,7 @@ Ihr steckt mitten in der Ausbildung zum Fachinformatiker bzw. zur Fachinformatik
 - [Was erwartet Euch?](#was-erwartet-euch)
 - [Projekte](#projekte)
   - [DB-Genius – Dein eigener KI-Agent in Java](#db-genius--dein-eigener-ki-agent-in-java)
+  - [Getränkemarkt SQL-Agent – Dein eigener KI-Agent in Java](#getränkemarkt-sql-agent--dein-eigener-ki-agent-in-java)
 
 ***
 
@@ -103,6 +104,30 @@ Alle theoretischen Grundlagen, detaillierte Erklärungen zum Code und die Hinter
 
 ➡️ **[Ergänzung: KI, Docker und MariaDB (PDF)](https://michael2024abc.github.io/EduKI/af_docker_db.pdf)**
 
+#### **Getränkemarkt SQL-Agent – Dein eigener KI-Agent in Java**
+
+Ein weiteres spannendes Projekt ist der 'Getränkemarkt SQL-Agent', der das Konzept des DB-Genius auf eine spezielle Domäne anwendet.
+Wir entwickeln den "Getränkemarkt SQL-Agenten", eine Anwendung mit einer grafischen Benutzeroberfläche (GUI).
+
+Ihr könnt ihm, wie gewohnt, Fragen in natürlicher Sprache stellen, zum Beispiel:
+"Welche Artikel von der Marke 'Karlsquell' haben wir im Sortiment?".
+
+Doch anstatt nur eine Antwort zu geben, geht dieser Agent einen entscheidenden Schritt weiter:
+Er generiert den passenden SQL-Befehl und zeigt ihn euch an. Damit habt ihr die volle Kontrolle und könnt verschiedene Aktionen auslösen:
+
+*   **SQL ausführen:**<br>
+    Führt die Abfrage auf der MariaDB-Datenbank aus und zeigt die Ergebnisse direkt in einer übersichtlichen Tabelle an.
+*   **SQL erklären lassen:**<br>
+    Wenn ihr neugierig seid, wie der SQL-Befehl funktioniert, kann die KI ihn euch Schritt für Schritt auf Deutsch erläutern.
+*   **Als CSV exportieren:**<br>
+    Für den späteren Gebrauch in anderen Programmen wie Excel könnt ihr die Ergebnisse mit einem Klick als CSV-Datei speichern.
+
+➡️ [Hier geht's zum Quellcode](https://michael2024abc.github.io/EduKI/einheiten/ki_agent_gm)
+
+➡️ **[Skript öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_agent_gm.pdf)**
+
+➡️ **[Tabellenmodell öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_tabellenmodell_gm.pdf)**
+=======
 
 ---
 
