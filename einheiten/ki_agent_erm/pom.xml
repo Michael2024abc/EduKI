@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+   xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>de.gc.agent</groupId>
+   <artifactId>erm</artifactId>
+   <version>0.1.0</version>
+
+   <properties>
+
+      <!-- Wir legen hier zentrale Versionen fest, um sie leicht zu aktualisieren. -->
+      <maven.compiler.source>21</maven.compiler.source>
+      <maven.compiler.target>21</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+      <langchain4j.version>1.4.0</langchain4j.version>
+      <langchain4j-mcp.version>1.4.0-beta10</langchain4j-mcp.version>
+      <langchain4j-google-ai-gemini.version>1.4.0</langchain4j-google-ai-gemini.version>
+      <langchain4j-github-models.version>1.4.0-beta10</langchain4j-github-models.version>
+      <langchain4j-ollama.version>1.4.0</langchain4j-ollama.version>
+      <jackson.version>2.20.0</jackson.version>
+
+
+      <mariadb-java-client.version>3.5.5</mariadb-java-client.version>
+      <slf4j-simple.version>2.0.17</slf4j-simple.version>
+      <plantuml.version>1.2025.4</plantuml.version>
+      <text-table-formatter.version>1.2.4</text-table-formatter.version>
+      <info.picocli.version>4.7.7</info.picocli.version>
+
+      <javafx.version>21</javafx.version>
+
+      <!-- Plugin Versions -->
+      <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+      <javafx-maven-plugin.version>0.0.8</javafx-maven-plugin.version>
+      <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
+
+   </properties>
+
+   <dependencies>
+
+      <!-- =================================================================== -->
+      <!-- ABHÄNGIGKEITEN FÜR LANGCHAIN4J & GOOGLE GEMINI -->
+      <!-- =================================================================== -->
+
+      <!-- Das Herzstück von LangChain4j. Bietet die Kern-APIs. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j</artifactId>
+         <version>${langchain4j.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-mcp</artifactId>
+         <version>${langchain4j-mcp.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für Google Gemini AI). -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-google-ai-gemini</artifactId>
+         <version>${langchain4j-google-ai-gemini.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für GitHub Copilot. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-github-models</artifactId>
+         <version>${langchain4j-github-models.version}</version>
+      </dependency>
+
+      <!-- Der Konnektor speziell für Ollama. -->
+      <dependency>
+         <groupId>dev.langchain4j</groupId>
+         <artifactId>langchain4j-ollama</artifactId>
+         <version>${langchain4j-ollama.version}</version>
+      </dependency>
+
+
+      <!-- =================================================================== -->
+      <!-- JSON-Werkzeuge für AiServices -->
+      <!-- =================================================================== -->
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-databind</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.fasterxml.jackson.datatype</groupId>
+         <artifactId>jackson-datatype-jsr310</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+
+      <!-- =================================================================== -->
+      <!-- JavaFX -->
+      <!-- =================================================================== -->
+      <dependency>
+         <groupId>org.openjfx</groupId>
+         <artifactId>javafx-controls</artifactId>
+         <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openjfx</groupId>
+         <artifactId>javafx-fxml</artifactId>
+         <version>${javafx.version}</version>
+      </dependency>
+
+      <!-- =================================================================== -->
+      <!-- ABHÄNGIGKEITEN FÜR DIE DATENBANK & LOGGING, ... -->
+      <!-- =================================================================== -->
+
+      <!-- Der offizielle JDBC-Treiber für MariaDB. -->
+      <dependency>
+         <groupId>org.mariadb.jdbc</groupId>
+         <artifactId>mariadb-java-client</artifactId>
+         <version>${mariadb-java-client.version}</version>
+      </dependency>
+
+      <!-- Erzeugt schöne Text-Tabellen -->
+      <dependency>
+         <groupId>org.nocrala.tools.texttablefmt</groupId>
+         <artifactId>text-table-formatter</artifactId>
+         <version>${text-table-formatter.version}</version>
+      </dependency>
+
+      <!-- PlantUML für die programmatische Diagramm-Generierung -->
+      <dependency>
+         <groupId>net.sourceforge.plantuml</groupId>
+         <artifactId>plantuml</artifactId>
+         <version>${plantuml.version}</version>
+      </dependency>
+
+      <!-- Picocli für die Kommandozeilen-Argumente -->
+      <dependency>
+         <groupId>info.picocli</groupId>
+         <artifactId>picocli</artifactId>
+         <version>${info.picocli.version}</version>
+      </dependency>
+
+      <!-- Eine einfache Logging-Implementierung. -->
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-simple</artifactId>
+         <version>${slf4j-simple.version}</version>
+      </dependency>
+
+   </dependencies>
+
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+            <configuration>
+               <source>21</source>
+               <target>21</target>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>${javafx-maven-plugin.version}</version>
+            <configuration>
+               <mainClass>de.gc.agent.erm.MainApp</mainClass>
+               <commandlineArgs>ermsystem.gemini
+                  src/main/resources/config-example.properties</commandlineArgs>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>${maven-shade-plugin.version}</version>
+            <executions>
+               <execution>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>shade</goal>
+                  </goals>
+                  <configuration>
+                     <transformers>
+                        <transformer
+                           implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                           <mainClass>de.gc.agent.erm.Launcher</mainClass>
+                        </transformer>
+                     </transformers>
+                     <filters>
+                        <filter>
+                           <artifact>*:*</artifact>
+                           <excludes>
+                              <exclude>META-INF/*.SF</exclude>
+                              <exclude>META-INF/*.DSA</exclude>
+                              <exclude>META-INF/*.RSA</exclude>
+                           </excludes>
+                        </filter>
+                     </filters>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+
+      </plugins>
+   </build>
+
+</project>

@@ -1,0 +1,96 @@
+/* Stile für den ERM-Editor */
+
+/* Layout-Steuerungsbuttons (Ein-/Ausklappen, Zurücksetzen) */
+.layout-button {
+    -fx-background-color: #F0F0F0; /* Helles Grau */
+    -fx-text-fill: #505050;
+    -fx-border-color: #D0D0D0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.layout-button:hover {
+    -fx-background-color: #E0E0E0; /* Etwas dunkler bei Hover */
+}
+
+/* Tutor-Buttons */
+.tutor-button {
+    -fx-background-color: #E0F2F1; /* Sehr helles Türkis/Mint */
+    -fx-text-fill: #00796B;       /* Dunkles Türkis für den Text */
+    -fx-border-color: #B2DFDB;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+}
+.tutor-button:hover {
+    -fx-background-color: #B2DFDB; /* Etwas dunkler bei Hover */
+}
+
+/* Basis-Stil für die Haupt-Aktionsbuttons unten in den Spalten */
+.action-button {
+    -fx-font-size: 1.1em;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.action-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 6, 0, 0, 2);
+}
+
+/* Spezifische Farben für jeden Schritt in einer harmonischen Progression */
+.action-button-step1 {
+    -fx-background-color: linear-gradient(to bottom right, #4DB6AC, #00897B); /* Türkis */
+}
+.action-button-step2 {
+    -fx-background-color: linear-gradient(to bottom right, #4FC3F7, #03A9F4); /* Hellblau */
+}
+.action-button-step3 {
+    -fx-background-color: linear-gradient(to bottom right, #7986CB, #3F51B5); /* Indigo */
+}
+.action-button-step4 {
+    -fx-background-color: linear-gradient(to bottom right, #BA68C8, #9C27B0); /* Lila */
+}
+
+/* --- Stile für den Tutor-Dialog --- */
+
+/* Hintergrund für die Zeile einer Tutor-Antwort */
+.tutor-row {
+    -fx-background-color: #F5F5F5; /* Helles Grau */
+}
+
+/* Hintergrund für die Zeile einer Benutzer-Frage */
+.user-row {
+    -fx-background-color: #F1F8E9; /* Helles Grün */
+}
+
+/* Stile für die TextArea in der Tutor-Chat-Ansicht */
+.chat-message-area {
+    -fx-background-insets: 0;
+    -fx-padding: 8;
+    -fx-background-radius: 10;
+    -fx-background-color: white; /* Standard-Sprechblasen-Hintergrund */
+}
+
+.user-row .chat-message-area {
+    -fx-background-color: #DCF8C6; /* WhatsApp-Grün für Benutzer-Sprechblase */
+}
+
+.chat-message-area .content {
+    -fx-background-color: transparent;
+}
+
+.chat-message-area:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-text-box-border: transparent;
+}
+
+/* Stil für den neuen Kopieren-Button */
+.copy-button {
+    -fx-background-color: #E0E0E0;
+    -fx-font-size: 0.8em;
+    -fx-padding: 2 6 2 6;
+}
+.copy-button:hover {
+    -fx-background-color: #D0D0D0;
+}

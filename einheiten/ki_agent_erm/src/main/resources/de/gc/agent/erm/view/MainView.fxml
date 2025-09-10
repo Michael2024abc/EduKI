@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.gc.agent.erm.view.MainController">
+    <top>
+        <VBox spacing="10.0" style="-fx-padding: 10;">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label text="Beschreiben Sie hier Ihr Datenmodell in natürlicher Sprache:" style="-fx-font-weight: bold;" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#onInformationTutorClicked" text="Wissens-Tutor" styleClass="tutor-button">
+                    <tooltip><Tooltip text="Startet einen universellen Tutor, um Fragen zu allen Themen der Datenbankmodellierung und darüber hinaus zu stellen." /></tooltip>
+                </Button>
+                <Button onAction="#onSaveProjectClicked" text="Speichern">
+                    <tooltip><Tooltip text="Speichert den gesamten aktuellen Arbeitsstand in einer Projekt-Datei (*.ermp)." /></tooltip>
+                </Button>
+                <Button onAction="#onLoadProjectClicked" text="Laden">
+                    <tooltip><Tooltip text="Lädt einen gespeicherten Arbeitsstand aus einer Projekt-Datei (*.ermp)." /></tooltip>
+                </Button>
+                <Button onAction="#onResetDividerPositions" text="☷" styleClass="layout-button">
+                    <tooltip><Tooltip text="Alle Bereiche gleichmäßig verteilen" /></tooltip>
+                </Button>
+            </HBox>
+            <TextArea fx:id="descriptionTextArea" prefHeight="100.0" promptText="z.B. Ein Dozent hält viele Vorlesungen..." />
+        </VBox>
+    </top>
+
+    <center>
+        <SplitPane fx:id="mainSplitPane" dividerPositions="0.25, 0.5, 0.75" prefHeight="400.0" prefWidth="1180.0">
+            <!-- Column 1: Analysis Table -->
+            <VBox spacing="5.0" style="-fx-padding: 0 5 0 10;">
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Button onAction="#togglePane1" text="&lt;" styleClass="layout-button"><tooltip><Tooltip text="Bereich 1 ein-/ausklappen" /></tooltip></Button>
+                    <Label text="Schritt 1: Analysierte Beziehungen" style="-fx-font-weight: bold;" />
+                    <Button onAction="#onHelpRelationshipsTableClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Interaktiven Lernassistenten für diesen Schritt starten" /></tooltip></Button>
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <ProgressIndicator fx:id="progressIndicator" visible="false" prefHeight="20" prefWidth="20" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Button onAction="#onLoadAnalysisClicked" text="Laden..."><tooltip><Tooltip text="Lädt eine gespeicherte Analyse aus einer JSON-Datei"/></tooltip></Button>
+                    <Button onAction="#onSaveAnalysisClicked" text="Speichern..."><tooltip><Tooltip text="Speichert die aktuelle Tabelle in einer JSON-Datei"/></tooltip></Button>
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button onAction="#onAddRowClicked" text="+"><tooltip><Tooltip text="Fügt eine neue, leere Beziehung hinzu" /></tooltip></Button>
+                    <Button onAction="#onCopyRowClicked" text="Kopieren"><tooltip><Tooltip text="Dupliziert die markierte Zeile" /></tooltip></Button>
+                    <Button onAction="#onDeleteRowClicked" text="-"><tooltip><Tooltip text="Löscht die markierte Beziehung" /></tooltip></Button>
+                </HBox>
+                <TableView fx:id="relationshipTableView" editable="true" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="entity1Col" prefWidth="120.0" text="Entität 1" />
+                        <TableColumn fx:id="card1Col" prefWidth="75.0" text="Kard. 1" />
+                        <TableColumn fx:id="verbCol" prefWidth="100.0" text="Beziehung" />
+                        <TableColumn fx:id="card2Col" prefWidth="75.0" text="Kard. 2" />
+                        <TableColumn fx:id="entity2Col" prefWidth="120.0" text="Entität 2" />
+                        <TableColumn fx:id="directionCol" prefWidth="50.0" text="Dir." />
+                    </columns>
+                </TableView>
+                <Button fx:id="analyzeButton" onAction="#onAnalyzeClicked" text="1. KI-Analyse starten" maxWidth="Infinity" styleClass="action-button, action-button-step1">
+                    <tooltip><Tooltip text="Startet die KI-Analyse des Beschreibungstextes und füllt die Beziehungstabelle." /></tooltip>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </Button>
+            </VBox>
+            
+            <!-- Column 2: Conceptual ERM Diagram -->
+            <VBox spacing="5.0" style="-fx-padding: 0 5 0 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Button onAction="#togglePane2" text="&gt;&lt;" styleClass="layout-button"><tooltip><Tooltip text="Bereich 2 ein-/ausklappen" /></tooltip></Button>
+                    <Label text="Schritt 2: Konzeptionelles Modell" style="-fx-font-weight: bold;" />
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button onAction="#onUpdateErmDiagramFromCodeClicked" text="Aktualisieren"><tooltip><Tooltip text="Rendert das ERM-Diagramm aus dem unten stehenden Code neu"/></tooltip></Button>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="Diagramm" />
+                    <Button onAction="#onHelpErmDiagramClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Lernassistenten für das ERM-Diagramm starten"/></tooltip></Button>
+                </HBox>
+                <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <ImageView fx:id="ermDiagramImageView" />
+                </ScrollPane>
+                 <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="PlantUML Code" />
+                    <Button onAction="#onHelpErmPlantUmlClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Lernassistenten für den PlantUML-Code starten"/></tooltip></Button>
+                </HBox>
+                <TextArea fx:id="ermPlantUmlTextArea" editable="true" prefHeight="150" wrapText="true" />
+                 <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                    <Button onAction="#onExportErmPumlClicked" text="Code exportieren...">
+                        <tooltip><Tooltip text="Speichert den PlantUML-Code für das ERM-Diagramm in einer .puml-Datei." /></tooltip>
+                    </Button>
+                    <Button onAction="#onExportErmDiagramClicked" text="Bild exportieren...">
+                        <tooltip><Tooltip text="Exportiert das sichtbare ERM-Diagramm als Bilddatei (PNG oder SVG)." /></tooltip>
+                    </Button>
+                </HBox>
+                <Button fx:id="createErmButton" onAction="#onCreateErmClicked" text="2. ERM erstellen" maxWidth="Infinity" styleClass="action-button, action-button-step2">
+                    <tooltip><Tooltip text="Erstellt das konzeptionelle ERM-Diagramm aus der Beziehungstabelle." /></tooltip>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </Button>
+            </VBox>
+
+            <!-- Column 3: Logical Table Model -->
+            <VBox spacing="5.0" style="-fx-padding: 0 5 0 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Button onAction="#togglePane3" text="&gt;&lt;" styleClass="layout-button"><tooltip><Tooltip text="Bereich 3 ein-/ausklappen" /></tooltip></Button>
+                    <Label text="Schritt 3: Logisches Modell" style="-fx-font-weight: bold;" />
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button onAction="#onUpdateTableModelDiagramFromCodeClicked" text="Aktualisieren"><tooltip><Tooltip text="Rendert das Tabellen-Diagramm aus dem unten stehenden Code neu"/></tooltip></Button>
+                </HBox>
+                 <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="Diagramm" />
+                    <Button onAction="#onHelpLogicalModelClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Lernassistenten für das logische Diagramm starten" /></tooltip></Button>
+                </HBox>
+                <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <ImageView fx:id="tableModelImageView" />
+                </ScrollPane>
+                 <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="PlantUML Code" />
+                    <Button onAction="#onHelpLogicalModelPlantUmlClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Lernassistenten für den PlantUML-Code des logischen Modells starten" /></tooltip></Button>
+                </HBox>
+                <TextArea fx:id="tableModelPlantUmlTextArea" editable="true" prefHeight="150" wrapText="true" />
+                 <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                    <Button onAction="#onExportTableModelPumlClicked" text="Code exportieren...">
+                        <tooltip><Tooltip text="Speichert den PlantUML-Code für das logische Modell in einer .puml-Datei." /></tooltip>
+                    </Button>
+                    <Button onAction="#onExportTableModelDiagramClicked" text="Bild exportieren...">
+                        <tooltip><Tooltip text="Exportiert das sichtbare Tabellen-Diagramm als Bilddatei (PNG oder SVG)." /></tooltip>
+                    </Button>
+                </HBox>
+                <Button fx:id="createTableModelButton" onAction="#onCreateTableModelClicked" text="3. Tabellenmodell erstellen" maxWidth="Infinity" styleClass="action-button, action-button-step3">
+                    <tooltip><Tooltip text="Erstellt das logische Tabellenmodell aus dem konzeptionellen ERM-Diagramm." /></tooltip>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </Button>
+            </VBox>
+            
+            <!-- Column 4: SQL DDL -->
+            <VBox spacing="5.0" style="-fx-padding: 0 10 0 5;">
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Button onAction="#togglePane4" text="&gt;" styleClass="layout-button"><tooltip><Tooltip text="Bereich 4 ein-/ausklappen" /></tooltip></Button>
+                    <Label text="Schritt 4: SQL-DDL" style="-fx-font-weight: bold;" />
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button onAction="#onHelpSqlDdlClicked" text="Tutor" styleClass="tutor-button"><tooltip><Tooltip text="Lernassistenten für das SQL-Skript starten" /></tooltip></Button>
+                    <Button onAction="#onExportSqlClicked" text="SQL exportieren..."><tooltip><Tooltip text="Speichert das SQL-Skript in einer .sql-Datei" /></tooltip></Button>
+                </HBox>
+                <TextArea fx:id="sqlDdlTextArea" editable="true" prefHeight="150" wrapText="false" VBox.vgrow="ALWAYS" style="-fx-font-family: 'monospaced';" />
+                <Button fx:id="createSqlDdlButton" onAction="#onCreateSqlDdlClicked" text="4. SQL-DDL erstellen" maxWidth="Infinity" styleClass="action-button, action-button-step4">
+                    <tooltip><Tooltip text="Erstellt das finale SQL-DDL-Skript aus dem logischen Tabellenmodell." /></tooltip>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </Button>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

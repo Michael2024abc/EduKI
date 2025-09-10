@@ -22,6 +22,7 @@ Ihr steckt mitten in der Ausbildung zum Fachinformatiker bzw. zur Fachinformatik
 - [Projekte](#projekte)
   - [DB-Genius – Dein eigener KI-Agent in Java](#db-genius--dein-eigener-ki-agent-in-java)
   - [Getränkemarkt SQL-Agent – Dein eigener KI-Agent in Java](#getränkemarkt-sql-agent--dein-eigener-ki-agent-in-java)
+  - [KI-gestützter ERM-Editor](#ki-gestützter-erm-editor)
 
 ***
 
@@ -130,6 +131,24 @@ Er generiert den passenden SQL-Befehl und zeigt ihn euch an. Damit habt ihr die 
 
 ---
 
+#### **KI-gestützter ERM-Editor**
+
+Dieses Projekt ist ein umfassendes Werkzeug, das euch durch den gesamten Prozess des Datenbank-Entwurfs führt – von der ersten Idee bis zum fertigen SQL-Code.
+
+Der Editor nutzt KI-Agenten, um euch bei jedem Schritt zu unterstützen:
+*   **Textanalyse:** Eine KI extrahiert aus einer einfachen, textuellen Beschreibung die relevanten Entitäten und Beziehungen.
+*   **Modellerstellung:** Die Anwendung generiert automatisch ein konzeptionelles ER-Modell und überführt dieses in ein logisches Tabellenmodell.
+*   **SQL-Generierung:** Am Ende wird das fertige SQL-DDL-Skript erzeugt, mit dem ihr die Datenbankstruktur aufbauen könnt.
+*   **Interaktive Tutoren:** In jedem Schritt könnt ihr einen KI-Tutor um Hilfe bitten, der euch die Konzepte und den Code erklärt.
+
+Dieses Projekt ist ideal, um den professionellen Workflow des Datenbank-Designs zu erlernen und die Zusammenarbeit zwischen Mensch und KI in einem komplexeren Entwicklungsprozess zu erleben.
+
+➡️ [Hier geht's zum Quellcode](https://github.com/Michael2024abc/EduKI/tree/main/einheiten/ki_agent_erm)
+
+➡️ **[Benutzerhandbuch öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_ermagent.pdf)**
+
+---
+
 #### **Weitere Projekte & Aufgaben**
 
 Das EduKI-Repository wächst ständig weiter.
@@ -140,4 +159,3 @@ Langweilig wird’s hier bestimmt nicht. Bleibt dran und macht mit – Innovatio
 
 **Kurz gesagt:**
 Mit EduKI holt Ihr Euch Skills, von denen andere nur träumen. Probiert Projekte aus, habt Spaß beim Coden – und gestaltet die digitale Welt von morgen. Los geht’s
-
