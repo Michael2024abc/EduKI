@@ -23,6 +23,8 @@ Ihr steckt mitten in der Ausbildung zum Fachinformatiker bzw. zur Fachinformatik
   - [DB-Genius – Dein eigener KI-Agent in Java](#db-genius--dein-eigener-ki-agent-in-java)
   - [Getränkemarkt SQL-Agent – Dein eigener KI-Agent in Java](#getränkemarkt-sql-agent--dein-eigener-ki-agent-in-java)
   - [KI-gestützter ERM-Editor](#ki-gestützter-erm-editor)
+- [Über den Tellerrand hinaus schauen](#über-den-tellerrand-hinaus-schauen)
+  - [KI-Agenten im Unterricht: Ein Praxisleitfaden für Lehrkräfte](#ki-agenten-im-unterricht-ein-praxisleitfaden-für-lehrkräfte)
 
 ***
 
@@ -146,6 +148,25 @@ Dieses Projekt ist ideal, um den professionellen Workflow des Datenbank-Designs 
 ➡️ [Hier geht's zum Quellcode](https://github.com/Michael2024abc/EduKI/tree/main/einheiten/ki_agent_erm)
 
 ➡️ **[Benutzerhandbuch öffnen (PDF)](https://michael2024abc.github.io/EduKI/af_ermagent.pdf)**
+
+---
+### Über den Tellerrand hinaus schauen
+
+#### **KI-Agenten im Unterricht: Ein Praxisleitfaden für Lehrkräfte**
+
+Dieses Skript richtet sich an Lehrkräfte und alle, die neugierig sind, wie KI den Unterricht revolutionieren kann. Entdeckt, wie Ihr mit dem KI-System "Le Chat" von Mistral AI maßgeschneiderte Unterrichtseinheiten für Fächer wie "Politik & Gesellschaft" erstellen könnt. Der Leitfaden zeigt praxisnah, wie man einen eigenen KI-Agenten konfiguriert, der nicht nur bei der Erstellung von Materialien hilft, sondern auch moderne didaktische Konzepte wie Escape Games vorschlägt.
+
+Ein besonderer Fokus liegt auf dem verantwortungsvollen Einsatz von KI: **"Le Chat" ist DSGVO-konform** und kann ohne Anmeldung genutzt werden, wodurch der Schutz persönlicher Daten stets gewährleistet ist. Ein idealer Einstieg, um die Potenziale von KI im Bildungskontext sicher und kreativ zu erproben.
+
+➡️ **[Hier geht's zum Skript für Lehrkräfte (PDF)](https://michael2024abc.github.io/EduKI/af_pug_agent.pdf)**
+
+➡️ **Zugehörige Materialien:**
+- **[System-Prompt (Anweisungen)](einheiten/prompts/pug_prompt.md)**
+- **[Leitplanken (Richtlinien)](einheiten/prompts/pug_leitlinien.md)**
+
+➡️ **[Le Chat direkt ausprobieren](https://chat.mistral.ai/chat)**
+
+
 
 ---
 
